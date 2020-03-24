@@ -29,7 +29,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 //                .anyRequest()
 //                .authenticated();
 
-        http.requestMatchers().antMatchers("/resources/*").and().authorizeRequests().anyRequest().authenticated();
+        http.requestMatchers().antMatchers("/resources/*").and().authorizeRequests().antMatchers("/resources/phone").permitAll().anyRequest().authenticated();
     }
 
     @Override

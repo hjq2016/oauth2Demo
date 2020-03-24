@@ -43,8 +43,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         logger.info("SecurityConfiguration中配置HttpSecurity对象执行");
 //        http.authorizeRequests().antMatchers("/admin").permitAll().anyRequest().hasAnyRole("USER", "ADMIN").and().formLogin();;
-//        http.authorizeRequests().antMatchers("/").permitAll().anyRequest().hasAnyRole("USER", "ADMIN");
-//                .and().formLogin();
+        http.authorizeRequests().antMatchers("/").permitAll().anyRequest().hasAnyRole("USER", "ADMIN")
+                .and().formLogin();
     }
 
 //    @Override

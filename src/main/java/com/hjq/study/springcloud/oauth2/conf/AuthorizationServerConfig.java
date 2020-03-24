@@ -49,7 +49,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         final JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey("123");
+        //这里使用堆成加密，123456789是work key
+        converter.setSigningKey("123456789");
 //        KeyStoreKeyFactory keyStoreKeyFactory =
 //                new KeyStoreKeyFactory(new ClassPathResource("mytest.jks"), "mypass".toCharArray());
 //        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("mytest"));
